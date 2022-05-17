@@ -1,13 +1,82 @@
-body {
+:root {
+  --background: #f0f2f5;
+  --text-body: #363f5f;
+  }
+  
+  * {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  html { /*Acessibilidade hack!!*/
+  
+  @media (max-width: 1080px) {
+      font-size: 93.75%; /*  15px for */
+  }
+  
+  @media (max-width: 720px) {
+      font-size: 87.5%; /* 14px for */
+  }
+  }
+  
+  body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  }
+  
+  h1, h2, h3, h4, h5, h6, strong {
+  font-weight: 700;
+  }
+  
+  body {
+  background: var(--background);
+  --webkit-font-smoothing: antialiased;
+  color: var(--text-body);
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  .fields div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;     
+  }
+
+  .fields h2 {
+    font-size: 2.0rem;
+    margin-bottom: 20px;
+  }
+
+  .fields input {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #363f5f;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);   
+  }
+
+  button {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #363f5f;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);   
+  }
+
+  button:hover {
+    background-color: rgb(247, 247, 247);
+  }
+
+
+ 
+
+
