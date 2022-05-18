@@ -5,6 +5,8 @@ import './index.css';
 
 
 export default function App() {
+
+  console.log()
   
   const [loadingData, setLoadingData] = useState("");
 
