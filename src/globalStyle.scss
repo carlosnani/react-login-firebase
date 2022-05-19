@@ -3,6 +3,8 @@
     --text-body: #363f5f;
 
     --background-components: #edeff2;
+
+    --border-radius-all: 8px;
     }
     
     * {
@@ -20,6 +22,10 @@
     @media (max-width: 720px) {
         font-size: 87.5%; /* 14px for */
     }
+    }
+
+    .shadow {
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
     }
     
     body, input, textarea, button {
@@ -43,6 +49,36 @@
     --webkit-font-smoothing: antialiased;
     color: var(--text-body);
     }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #363f5f;
+      background-color: #fff;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+      border-radius: var(--border-radius-all);
+  }
+  
+  button {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #363f5f;
+      background-color: #fff;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+      border-radius: var(--border-radius-all);
+
+      &:hover {
+          background-color: rgb(247, 247, 247);
+      }
+  }
 
 @media only screen and (max-width: 600px) {
   .container {

@@ -26,7 +26,7 @@ export function SingInForm() {
 
   return (
    <div className="container">
-      <form className='singInform'>
+      <form className='singInform shadow'>
       <div>
         <h2> Cadastro </h2>
         <input ref={emailRef} type='text' placeholder='email' />
