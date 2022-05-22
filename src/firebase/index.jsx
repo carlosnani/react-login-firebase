@@ -17,3 +17,9 @@ const auth = getAuth();
 export function signUp(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
+
+export function appFirebase(){
+  return app;
+}
+
+ 

@@ -1,22 +1,11 @@
+import {SingUpForm} from '../../components/singup';
 
-
-import '../../globalStyle.scss';
-
-import { SingInForm } from "../../components/singIn"
-
-export function SignUpPage() { 
-
+export function SignUp() {
   return (
-    <>
-       <SingInForm />
-    </>
+    <div>
+      <SingUpForm />      
+    </div>
   )
 }
-
-
-
-
-
-
-
-
+ 
+ 

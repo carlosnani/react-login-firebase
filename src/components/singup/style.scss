@@ -1,4 +1,4 @@
-.singInform {
+.singUpForm {
     margin: 120px auto;
     width: 400px;
     padding: 60px 30px;
@@ -15,5 +15,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    .googleButton {
+        width: 100% !important;
+        border-radius: 8px;
     }
 }
