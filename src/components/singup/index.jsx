@@ -14,36 +14,33 @@ export function SingUpForm() {
   
   const navigate = useNavigate();
   
-  const { signUp, signInWithGoogle }  = useContext(UseAuthContext);
-  
+  const { signIn, signInWithGoogle }  = useContext(UseAuthContext);
   
   const handleSubmit = async (e) => {
     e.preventDefault();  
 
     if (email === '' || password === '') {
-      toast.error('Email e password são requeridos');
+      toast.error('Os campos Email e password estão vazios');
       return;     
     } else {
       try {
-        await signUp(email, password); 
-        toast.success('Usuário criado com sucesso!'); 
-        navigate('/signin');
+        await signIn(email, password); 
+        toast.success('Usuário criado com sucesso!');         
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 3000);
       } catch (error) {      
         toast.error(error.message);
       }    
     }                
   };
 
-  function clearForm() {
-    email = '';
-    password = '';
-  }
-
+  
   return (
     <div className="container">
       <form className='singUpForm shadow'onSubmit={handleSubmit} >
         <div>
-          <h2> Sing Up </h2>
+          <h2> SignUp </h2>
           <input 
             type='text' 
             placeholder='email'
@@ -70,7 +67,7 @@ export function SingUpForm() {
       </form>
             
       <ToastContainer
-        position="bottom-right"
+        position="top-right"
         autoClose={3000}
         closeOnClick
         pauseOnHover
