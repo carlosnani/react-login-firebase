@@ -1,16 +1,10 @@
-import '../../globalStyle.scss';
-import './style.scss';
-
-
-export function SignIn() { 
+ import { SingInForm } from '../../components/singin';
+ 
+ export function SignIn() { 
 
   return (
     <div className='container'>
-      <h1>Sign Up Page</h1>
+      <SingInForm />
     </div>
   )
 }
-
-
-
-

@@ -12,11 +12,6 @@ export function Routers({children}) {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
-
-           
-          {/* <Route path="/signup" element={<SignUpPage />} /> 
-          <Route path="/signin" element={<SignInPage />} />  */}
-
         </Routes>
       </BrowserRouter>            
     )

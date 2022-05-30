@@ -1,65 +1,72 @@
-import { signUp } from '../../firebase';
-import { useRef, useState } from 'react';
-import './style.scss';
+import { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import GoogleButton from 'react-google-button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import GoogleButton from 'react-google-button'
+import { UseAuthContext } from '../../context/useAuthContext';
+import './style.scss';
 
+ 
 export function SingUpForm() {
 
-  const [loadingData, setLoadingData] = useState('');
-  const emailRef = useRef();
-  const passwordRef = useRef();
+  const [ email, setEmail ] = useState('');
+  const [ password, setPassword ] = useState('');
+  
+  const navigate = useNavigate();
+  
+  const { signUp, signInWithGoogle }  = useContext(UseAuthContext);
+  
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();  
 
-
-  async function handleSingUp(e) {
-    e.preventDefault();
-    if (emailRef.current.value === '' || passwordRef.current.value === '') {
-      toast.warning('Preencha os campos de email e senha');
-      return;
+    if (email === '' || password === '') {
+      toast.error('Email e password são requeridos');
+      return;     
     } else {
-      setLoadingData(true);
       try {
-        await signUp(emailRef.current.value, passwordRef.current.value);
-        clearForm();
-        toast.success('Cadastro realizado com sucesso');
-      } catch {
-        toast.error('Email já cadastrado');
-      }
-      setLoadingData(false);
-    }
-  }
+        await signUp(email, password); 
+        toast.success('Usuário criado com sucesso!'); 
+        navigate('/signin');
+      } catch (error) {      
+        toast.error(error.message);
+      }    
+    }                
+  };
 
   function clearForm() {
-    emailRef.current.value = '';
-    passwordRef.current.value = '';
+    email = '';
+    password = '';
   }
 
   return (
     <div className="container">
-      <form className='singUpForm shadow'>
+      <form className='singUpForm shadow'onSubmit={handleSubmit} >
         <div>
           <h2> Sing Up </h2>
-          <input ref={emailRef} type='text' placeholder='email' />
-          <input ref={passwordRef} type='password' placeholder='password' />
-
+          <input 
+            type='text' 
+            placeholder='email'
+            onChange={e => setEmail(e.target.value)}
+            />
+          <input 
+            type='password'
+              placeholder="password"
+            onChange={e => setPassword(e.target.value)}
+            />
           <button
             type='submit'
-            disabled={loadingData}
-            onClick={(e) => {
-              handleSingUp(e);
-            }}
           >
             SingUp
           </button>
-          <div className='line'>
-            
-          </div>
+          <div className='line'></div>            
+          
           <GoogleButton className="googleButton" 
           onClick={() => { console.log('Google button clicked') }}
         />
         </div>
 
+        <p className="already">Already have an account? <Link to='/signin'>Sing in</Link></p>
       </form>
             
       <ToastContainer

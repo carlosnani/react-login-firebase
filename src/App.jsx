@@ -1,14 +1,18 @@
 
 import './globalStyle.scss';
-
+import { GlobalAuth } from './context/useAuthContext';
 import { Routers } from './router'
 
 export default function App() {
+  
   return (
-    <Routers>
-      
-    </Routers>
+    <GlobalAuth>
+        <Routers>
+          
+        </Routers>
+    </GlobalAuth>
   );
+
 }
 
 
