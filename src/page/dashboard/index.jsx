@@ -1,9 +1,12 @@
 import React from 'react'
+import './style.scss';
 
-export function dashboard() {
+export function Dashboard() {
   return (
-    <div>
+
+    <div className="container">
       <h1>Dashboard</h1>
     </div>
+    
   )
 }

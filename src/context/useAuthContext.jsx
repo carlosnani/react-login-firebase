@@ -33,10 +33,9 @@ export const GlobalAuth = ({ children }) => {
         return signInWithPopup(auth, GoogleAuthProvider);
     }
 
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log("Auth", currentUser);
+            // console.log("Auth", currentUser);
             setUser(currentUser);
         });
 
@@ -45,10 +44,9 @@ export const GlobalAuth = ({ children }) => {
         };
     }, []);
 
-
     return (
         <UseAuthContext.Provider
-            value={{ signUp, signIn, signInWithGoogle }}>
+            value={{ signUp, signIn, signInWithGoogle, auth, user }}>
             {children}
         </UseAuthContext.Provider>
     )

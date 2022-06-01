@@ -21,11 +21,11 @@ export function SingInForm() {
       return;     
     } else {
       try {
-        // await signUp(email, password); 
-        toast.success('Usuário criado com sucesso!');         
+        await signIn(email, password);         
+        toast.success('Logado com sucesso');  
         setTimeout(() => {
-          navigate('/signin');
-        }, 3000);
+          navigate('/dashboard'); 
+        }, 2000 );
       } catch (error) {      
         toast.error(error.message);
       }    
@@ -37,8 +37,16 @@ export function SingInForm() {
       <form className='singInForm shadow' onSubmit={handleSingIn} >
         <div>
           <h2>SignIn</h2>
-          <input type='text' placeholder='email' />
-          <input type='password' placeholder='password' />
+          <input 
+          type='text' 
+          placeholder='email'
+          onChange={e => setEmail(e.target.value)}
+          />
+          <input 
+          type='password'
+          placeholder='password'
+          onChange={e => setPassword(e.target.value)}
+          />
           <button>SignIn</button>
         </div>
         <div className='line'></div>

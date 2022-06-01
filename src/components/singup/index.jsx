@@ -14,7 +14,7 @@ export function SingUpForm() {
   
   const navigate = useNavigate();
   
-  const { signIn, signInWithGoogle }  = useContext(UseAuthContext);
+  const { signUp, signInWithGoogle }  = useContext(UseAuthContext);
   
   const handleSubmit = async (e) => {
     e.preventDefault();  
@@ -24,10 +24,10 @@ export function SingUpForm() {
       return;     
     } else {
       try {
-        await signIn(email, password); 
+        await signUp(email, password); 
         toast.success('Usuário criado com sucesso!');         
         setTimeout(() => {
-          navigate('/dashboard');
+        navigate('/signin');
         }, 3000);
       } catch (error) {      
         toast.error(error.message);
