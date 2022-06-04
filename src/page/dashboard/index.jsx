@@ -1,4 +1,5 @@
 import React from 'react'
+import { LogOutBtn } from '../../components/logoutBtn'
 import './style.scss';
 
 export function Dashboard() {
@@ -6,6 +7,8 @@ export function Dashboard() {
 
     <div className="container">
       <h1>Dashboard</h1>
+      <LogOutBtn />
+      
     </div>
     
   )

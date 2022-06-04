@@ -46,7 +46,7 @@ export const GlobalAuth = ({ children }) => {
 
     return (
         <UseAuthContext.Provider
-            value={{ signUp, signIn, signInWithGoogle, auth, user }}>
+            value={{ signUp, signIn, signInWithGoogle, logOut, auth, user }}>
             {children}
         </UseAuthContext.Provider>
     )
