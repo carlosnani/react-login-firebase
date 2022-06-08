@@ -30,12 +30,12 @@ export const GlobalAuth = ({ children }) => {
     }
 
     function signInWithGoogle() {
-        return signInWithPopup(auth, GoogleAuthProvider);
+        const googleAuthProvider = new GoogleAuthProvider(); 
+        return signInWithPopup(auth, googleAuthProvider);
     }
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            // console.log("Auth", currentUser);
             setUser(currentUser);
         });
 

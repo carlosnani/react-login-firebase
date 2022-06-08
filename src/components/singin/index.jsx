@@ -11,7 +11,14 @@ export function SingInForm() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();  
   
-  const { signIn  }  = useContext(UseAuthContext);
+  const { signIn, signInWithGoogle }  = useContext(UseAuthContext);
+
+  async function handleGoogleSing() {
+   await signInWithGoogle();
+   setTimeout(() => {
+    navigate('/dashboard'); 
+    }, 1000 );
+  }
 
   const handleSingIn = async (e) => {
     e.preventDefault();  
@@ -51,7 +58,7 @@ export function SingInForm() {
         </div>
         <div className='line'></div>
         <GoogleButton className="googleButton"
-          onClick={() => { console.log('Google button clicked') }}
+          onClick={() => {handleGoogleSing()}}
         />
         <p className="already">Don't have an account? <Link to='/signup'>Sing Up</Link></p>
       </form>

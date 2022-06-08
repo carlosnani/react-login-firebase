@@ -15,6 +15,13 @@ export function SingUpForm() {
   const navigate = useNavigate();
   
   const { signUp, signInWithGoogle }  = useContext(UseAuthContext);
+
+  async function handleGoogleSing() {
+    await signInWithGoogle();
+    setTimeout(() => {
+     navigate('/dashboard'); 
+     }, 1000 );
+   }
   
   const handleSubmit = async (e) => {
     e.preventDefault();  
@@ -59,7 +66,7 @@ export function SingUpForm() {
           <div className='line'></div>            
           
           <GoogleButton className="googleButton" 
-          onClick={() => { console.log('Google button clicked') }}
+          onClick={() => {handleGoogleSing()}}
         />
         </div>
 
