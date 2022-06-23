@@ -43,7 +43,7 @@ export function SingInForm() {
     <div>
       <form className='singInForm shadow' onSubmit={handleSingIn} >
         <div>
-          <h2>SignIn</h2>
+          <h2>Login</h2>
           <input 
           type='text' 
           placeholder='email'
@@ -54,7 +54,7 @@ export function SingInForm() {
           placeholder='password'
           onChange={e => setPassword(e.target.value)}
           />
-          <button>SignIn</button>
+          <button>Login</button>
         </div>
         <div className='line'></div>
         <GoogleButton className="googleButton"
