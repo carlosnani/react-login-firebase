@@ -70,7 +70,7 @@ export function SingUpForm() {
         />
         </div>
 
-        <p className="already">Already have an account? <Link to='/signin'>Sing in</Link></p>
+        <p className="already">Already have an account? <Link to='/signin'>Login</Link></p>
       </form>
             
       <ToastContainer
