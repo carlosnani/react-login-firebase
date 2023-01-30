@@ -1,22 +1,40 @@
 import React from 'react'
-import { LogOutBtn } from '../../components/logoutBtn';
 import { useContext } from 'react';
 import { UseAuthContext } from '../../context/useAuthContext';
+import { UseDBContext } from '../../context/useFireStoneDB';
+
+import { Menu } from '../../components/menu';
+import { Sidebar } from '../../components/sidebar';
 
 import './style.scss';
 
 export function Dashboard() {
 
   const { user } = useContext(UseAuthContext);
-  const infoUser = user.reloadUserInfo;    
-     
+  const { displayName, email, photoURL } = user;
+
+  const { teste, info }  = useContext(UseDBContext);
+   
+      
   return (
 
-    <div className="container">
-      <h1>Dashboard</h1>
-      <p>Welcome {infoUser.displayName ? infoUser.displayName : user.email }</p>
-      <LogOutBtn />
-    </div>
+    <>
+      <Menu />
+      <div className="container">
+
+        <div className="grid-container">
+          
+          <div className="sidebar">
+            <Sidebar />
+          </div>
+
+          <div className="dashboard">
+            Dashboard
+          </div>
+
+        </div>
+      </div>
+    </>
     
   )
 }

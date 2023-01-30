@@ -12,7 +12,9 @@ export function ProtectRoute({ children }) {
     return (
       <div className="container">
         <h1>You need to be logged in to access this page</h1>
-        <button onClick={() => navigate('/')}>Go to Login</button>
+          <button className='btn' onClick={() => navigate('/')}>
+            Go to Login
+          </button>
       </div>      
     )  
   } else {

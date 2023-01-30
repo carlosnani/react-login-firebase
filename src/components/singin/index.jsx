@@ -54,7 +54,7 @@ export function SingInForm() {
           placeholder='password'
           onChange={e => setPassword(e.target.value)}
           />
-          <button>Login</button>
+          <button type='submit'>Login</button>
         </div>
         <div className='line'></div>
         <GoogleButton className="googleButton"

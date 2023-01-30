@@ -1,13 +1,20 @@
 import { useContext } from 'react';
 import { UseAuthContext } from '../../context/useAuthContext';
+import { AiOutlinePoweroff } from "react-icons/ai";
+
+import './style.scss'
 
 export function LogOutBtn() {
 
-  const { logOut }  = useContext(UseAuthContext);
+  const { logOut } = useContext(UseAuthContext);
 
   return (
-    <button type="button" onClick={()=>{logOut()}}>
-      logout x 
-    </button>
+    <div type="button" 
+        className='btn-icon logOff'
+        onClick={()=>{logOut()}}
+        title="Log Out"   
+      >
+      <AiOutlinePoweroff />
+    </div>
   )
 }

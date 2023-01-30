@@ -1,0 +1,31 @@
+.menu {
+  padding: 2.5rem 0 2.5rem 0;
+  background: var(--secondary);
+  height: 3.75rem;
+  color: var(--light-grey);
+  display: flex; 
+  align-items: center;
+
+  .menu-itens {
+    display: flex;    
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 0.625rem;
+    
+    img {
+      border-radius: 50%;  
+      width: 36px;
+      height: 36px;
+    }
+
+    .menu-info {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      font-size: 0.875rem;
+      border-right : 1px solid var(--grey);
+      margin-right: 0.5rem;
+      padding-right: 1.5rem;
+    }
+  }  
+}

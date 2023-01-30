@@ -42,7 +42,6 @@ export function SingUpForm() {
     }                
   };
 
-  
   return (
     <div className="container">
       <form className='singUpForm shadow'onSubmit={handleSubmit} >
@@ -60,6 +59,7 @@ export function SingUpForm() {
             />
           <button
             type='submit'
+            className='btn'
           >
             SingUp
           </button>
